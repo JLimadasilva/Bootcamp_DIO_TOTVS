@@ -9,3 +9,9 @@ Anotações importantes BOOTCAMP
 2. Clonar repositorio do GitHub
 * git clone LINK DO REPOSITORIO GITHUB (https)
 * git clone LINK DO REPOSITORIO GITHUB (https) NOME DESEJADO <- Clona o repositorio e salva com o nome que deseja na sua maquina.
+
+
+3. Salvando alterações no repositorio local
+* git status <- mostra o stts da árore de preparação dos arquivos
+* git add NOME DO DOCUMENTO <- adiciona o arquivo á área de preparação
+* git commit "ANOTAÇÃO" <- cria o commit
