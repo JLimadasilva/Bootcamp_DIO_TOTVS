@@ -1,0 +1,6 @@
+saldo = 500
+saldo += 200
+
+#PODE FAZER COM TODOS OS OPERADORES MATEMARICOS
+
+print(saldo)
