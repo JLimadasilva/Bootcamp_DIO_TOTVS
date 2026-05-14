@@ -79,4 +79,38 @@ drop table usuario;
 
 alter table usuario_nova rename usuario;
 
+alter table usuario
+modify column id int auto_increment,
+add primary key(id);
+
+alter table destinos 
+modify column id int auto_increment,
+add primary key(id);
+
+alter table destinos 
+modify column id int auto_increment,
+add primary key(id);
+
+delete from reservas 
+where id = 2;
+
+alter table reservas 
+modify column id int auto_increment,
+add primary key(id);
+
+alter table reservas 
+add constraint fk_reservas_usuarios
+foreign key(id_usuario) references usuario(id);
+
+alter table reservas 
+add constraint fk_reservas_destino
+foreign key(id_destino) references destinos(id);
+
+alter table reservas
+add constraint fk_usuarios
+foreign key (id_usuario) references usuario(id)
+on delete cascade;
+
+delete from usuario where id = 1;
+
 
