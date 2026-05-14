@@ -58,3 +58,7 @@ select * from reservas;
 select * from usuario
 where id = 1;
 
+update usuario set nome = "Joelzinho" where id = 1;
+delete from destinos where id = 2; 
+
+
