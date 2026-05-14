@@ -23,6 +23,14 @@ create table reservas(
     status_reserva varchar(30) default 'pendente'
 );
 
+create table usuario_nova(
+	id int,
+    nome varchar(100) not null,
+    email varchar(100) not null unique,
+    dt_nasc date not null,
+    endereco varchar(500) not null
+);
+
 insert into usuario values
 (1, "joel", "joel@gmail.com", "Residencial floresta", "2000-09-20");
 
@@ -51,7 +59,13 @@ insert into reservas values
 (2, 1, 1, "2026-05-13", "cancelada"),
 (3, 4, 1, "2026-05-13", "pendente");
 
+insert into usuario_nova
 select * from usuario;
+
+select * from usuario;
+select * from usuario_nova;
+
+
 select * from destinos;
 select * from reservas;
 
@@ -60,5 +74,9 @@ where id = 1;
 
 update usuario set nome = "Joelzinho" where id = 1;
 delete from destinos where id = 2; 
+
+drop table usuario;
+
+alter table usuario_nova rename usuario;
 
 
