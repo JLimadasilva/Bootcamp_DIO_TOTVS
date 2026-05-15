@@ -31,6 +31,8 @@ create table usuario_nova(
     endereco varchar(500) not null
 );
 
+/*###############################################################################################*/
+
 insert into usuario values
 (1, "joel", "joel@gmail.com", "Residencial floresta", "2000-09-20");
 
@@ -59,6 +61,9 @@ insert into reservas values
 (2, 1, 1, "2026-05-13", "cancelada"),
 (3, 4, 1, "2026-05-13", "pendente");
 
+/*##########################################################################################################*/
+
+
 insert into usuario_nova
 select * from usuario;
 
@@ -72,10 +77,14 @@ select * from reservas;
 select * from usuario
 where id = 1;
 
+/*##############################################################################################################*/
+
 update usuario set nome = "Joelzinho" where id = 1;
 delete from destinos where id = 2; 
 
 drop table usuario;
+
+/*###############################################################################################################*/
 
 alter table usuario_nova rename usuario;
 
@@ -112,5 +121,25 @@ foreign key (id_usuario) references usuario(id)
 on delete cascade;
 
 delete from usuario where id = 1;
+
+/*#####################################################################################################*/
+
+alter table usuario
+add rua varchar(100),
+add numero varchar(10),
+add cidade varchar(50),
+add estado varchar(20);
+
+alter table usuario 
+drop column endereco;
+
+/*####################################################################################################*/
+
+select * from usuario us
+inner join reservas rs on us.id = rs.id_usuario
+inner join destinos ds on rs.id_destino = ds.id
+
+
+
 
 
